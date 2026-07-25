@@ -1,106 +1,283 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <!-- Basic -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stock Education Hub – Start Learning</title>
-  <meta name="description" content="100% free stock market education. Learn chart reading, technical analysis, and risk management. No buy/sell tips. For learning purpose only.">
-  <link rel="canonical" href="https://example.com/">
 
-  <!-- Performance -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title> Pankaj Official | Learn More Earn More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Favicons (optional) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<style>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Stock Education Hub – Start Learning">
-  <meta property="og:description" content="Learn charts & risk management. No buy/sell tips. 100% educational.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop">
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins","Segoe UI",sans-serif;
+}
 
-  <!-- Minimal CSS (inline for speed) -->
-  <style>
-    :root{
-      --bg1:#0c0c1d;
-      --bg2:#1a1a2b;
-      --brand: #ff6699;
-      --brand-2:#00f0ff;
-      --text:#ffffff;
-      --muted:#b5b5c3;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover fixed;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
-    }
-    .container{
-      max-width:520px; margin:0 auto; padding:24px 18px; text-align:center; min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-      backdrop-filter: saturate(130%);
-    }
-    .badge{display:inline-block; font-size:.78rem; padding:6px 10px; border:1px solid #2a2a3a; border-radius:999px; color:#d6eaff; background:rgba(0,240,255,.08); margin-bottom:14px}
-    h1{font-size:1.9rem; line-height:1.2; margin:6px 0 10px; background:linear-gradient(90deg,var(--brand-2),var(--brand)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-    .sub{font-size:1rem; color:var(--muted); margin:0 auto 16px; max-width:36ch}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(0,255,153,.07); border:1px dashed rgba(0,255,153,.35); color:#d8ffe9; font-size:.9rem; margin:6px 0 18px;
-    }
-    ul.bullets{list-style:none; padding:0; margin:0 0 18px}
-    ul.bullets li{margin:8px 0; color:#e9eef9}
-    .cta{
-      display:inline-block; text-decoration:none; background:var(--brand); color:#041b14; padding:14px 18px; font-weight:700; border-radius:12px; box-shadow:0 0 0 0 rgba(0,255,153,.6); transform:translateZ(0);
-      transition:transform .15s ease;
-      animation:pulse 1.6s infinite;
-    }
-    .cta:active{transform:scale(.98)}
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(0,255,153,.55)}
-      70%{box-shadow:0 0 0 20px rgba(0,255,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,255,153,0)}
-    }
-    .fineprint{font-size:.86rem; color:var(--muted); margin:18px auto 0; max-width:44ch}
-    .disclaimer{font-size:.78rem; color:#9aa4b2; margin:18px auto 0; max-width:50ch}
-    .safe{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; color:#a1ffd6; font-size:.9rem}
-    .shield{width:18px; height:18px; display:inline-block; border-radius:4px; background:linear-gradient(135deg,#0df,#0f9)}
-    footer{opacity:.8; margin-top:22px; font-size:.78rem; color:#9aa4b2}
-  </style>
+body{
+  min-height:100vh;
+  background:linear-gradient(160deg,#0f1f1a,#132b24,#0c1815);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#ffffff;
+}
+
+.wrapper{
+  width:100%;
+  max-width:430px;
+  background:linear-gradient(160deg,#162e27,#0e211c);
+  border-radius:28px;
+  padding:30px 24px 35px;
+  box-shadow:0 25px 70px rgba(0,0,0,0.6);
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+/* LOGO */
+.logo{
+  width:115px;
+  height:115px;
+  margin:0 auto;
+  border-radius:50%;
+  padding:6px;
+  background:linear-gradient(135deg,#d4af37,#f6e27a,#d4af37);
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  background:#000;
+}
+
+/* TITLE */
+h1{
+  margin-top:20px;
+  font-size:28px;
+  font-weight:700;
+  background:linear-gradient(90deg,#f6e27a,#d4af37);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.tagline{
+  font-size:14px;
+  color:#a9cfc2;
+  margin-top:6px;
+}
+
+/* REDIRECT TIMER BOX */
+.timer-box{
+  margin-top:20px;
+  padding:14px;
+  background:rgba(212,175,55,0.1);
+  border:1px dashed rgba(246,226,122,0.4);
+  border-radius:14px;
+  font-size:14px;
+  color:#f6e27a;
+}
+
+.timer-count{
+  font-weight:700;
+  font-size:16px;
+  color:#ffffff;
+}
+
+/* INFO BOX */
+.info-box{
+  margin-top:24px;
+  background:rgba(255,255,255,0.04);
+  border-radius:18px;
+  padding:20px;
+  text-align:left;
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+.info-box ul{
+  list-style:none;
+}
+
+.info-box li{
+  display:flex;
+  gap:10px;
+  font-size:15px;
+  padding:9px 0;
+  color:#d7efe7;
+}
+
+.info-box li::before{
+  content:"✔";
+  color:#f6e27a;
+  font-weight:700;
+}
+
+/* CTA */
+.cta{
+  margin-top:24px;
+}
+
+.cta a{
+  display:block;
+  padding:17px;
+  font-size:18px;
+  font-weight:600;
+  border-radius:50px;
+  background:linear-gradient(135deg,#d4af37,#f6e27a);
+  color:#0c1815;
+  text-decoration:none;
+  box-shadow:0 18px 40px rgba(212,175,55,0.35);
+  transition:0.3s ease;
+}
+
+.cta a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 22px 50px rgba(212,175,55,0.6);
+}
+
+/* TRUST */
+.trust{
+  margin-top:18px;
+  font-size:13px;
+  color:#9ec9bb;
+}
+
+/* DISCLAIMER */
+.disclaimer{
+  margin-top:18px;
+  font-size:11px;
+  color:#7aa99b;
+  line-height:1.6;
+}
+
+/* NETAD BUTTON */
+.netad-btn{
+  margin-top:24px;
+}
+
+.netad-btn a{
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:40px;
+  background:rgba(255,255,255,0.05);
+  color:#d4af37;
+  font-size:13px;
+  font-weight:600;
+  text-decoration:none;
+  border:1px solid rgba(212,175,55,0.3);
+  transition:0.3s ease;
+}
+
+.netad-btn a:hover{
+  background:rgba(212,175,55,0.1);
+  box-shadow:0 10px 25px rgba(212,175,55,0.3);
+}
+
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1037107628718940');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1037107628718940&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  
 </head>
+
 <body>
-  <main class="container">
-    <span class="badge">100% Educational • Policy Safe</span>
-    <h1>Stock Education Hub – Start Learning</h1>
-    <p class="sub">Master the basics with beginner-friendly lessons</p>
 
-    <div class="pill">🚫 No Buy/Sell Tips • ✅ For Learning Purpose Only</div>
+<div class="wrapper">
 
-    <ul class="bullets" aria-label="What you'll learn">
-      <li>• Chart basics & risk rules (no return promises)</li>
-      <li>• How to read trends without speculation</li>
-      <li>• Market discipline & common mistakes</li>
+  <div class="logo">
+    <img src="https://original.netadexpert.live/wp-content/uploads/2026/07/PHOTO-2026-07-21-10-03-43.jpg" alt="Learning">
+  </div>
+
+  <h1>Pankaj Bhardwaj</h1>
+  <div class="tagline">Learn More • Earn More</div>
+
+  <!-- COUNTDOWN TIMER DISPLAY -->
+  <div class="timer-box">
+    Auto redirecting in <span id="countdown" class="timer-count">15</span> seconds...
+  </div>
+
+  <div class="cta">
+    <a href="https://t.me/+nr6GVuns7ScxYjk1" target="_blank" onclick="trackSubscribeEvent()">
+      Join Free Telegram Channel
+    </a>
+  </div>
+  
+  <div class="info-box">
+    <ul>
+      <li>Financial Education & Wealth Mindset</li>
+      <li>Market Basics & Learning Content</li>
+      <li>Beginner Friendly Community</li>
+      <li>No Tips • No Guarantees • Only Learning</li>
     </ul>
+  </div>
 
-    <!-- CTA goes to a page-specific bridge -->
-    <a class="cta" href="bridge-lp76.html" rel="nofollow">Start Learning</a>
+  <div class="cta">
+    <a href="https://t.me/+nr6GVuns7ScxYjk1" target="_blank" onclick="trackSubscribeEvent()">
+      Join Free Telegram Channel
+    </a>
+  </div>
 
-    <div class="safe"><span class="shield" aria-hidden="true"></span> Ad Policy Friendly Content</div>
+  <div class="trust">
+    Trusted by learners across India
+  </div>
 
-    <p class="fineprint">We focus on concepts & frameworks suitable for beginners.</p>
-    <p class="disclaimer"><em>This website is for educational purposes only. We do not provide investment, trading, or financial advice.</em></p>
+  <div class="disclaimer">
+    This channel is strictly for educational purposes only.<br>
+    We do not provide investment advice or guaranteed returns.<br>
+    Please consult a financial advisor before making decisions.
+  </div>
 
-    <footer>© <span id="y"></span> Market Basics Learning Hub</footer>
-  </main>
+  <div class="netad-btn">
+    <a href="https://t.me/+UyYzth29HpY4MDVl" target="_blank">
+      Ad Managed by Digital Ads Expert
+    </a>
+  </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+</div>
+
+<!-- AUTO REDIRECT & PIXEL TRACKING SCRIPT -->
+<script>
+  function trackSubscribeEvent() {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Subscribe');
+    }
+  }
+
+  (function() {
+    var seconds = 15;
+    var redirectUrl = "https://t.me/+bfMmaClg08U3MWM1";
+    var countdownElement = document.getElementById("countdown");
+
+    var timer = setInterval(function() {
+      seconds--;
+      if (countdownElement) {
+        countdownElement.textContent = seconds;
+      }
+      if (seconds <= 0) {
+        clearInterval(timer);
+        // Direct redirect without tracking event
+        window.location.href = redirectUrl;
+      }
+    }, 1000);
+  })();
+</script>
+
 </body>
 </html>
