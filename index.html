@@ -3,181 +3,468 @@
 <head>
 
 <meta charset="UTF-8">
-<title> Pankaj Office</title>
+<title>Pankaj Office — Learn More, Earn More</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Join Pankaj Bhardwaj's free Telegram channel for financial education, market basics, and wealth mindset learning.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Poppins","Segoe UI",sans-serif;
+:root {
+  --bg-deep: #0a1510;
+  --bg-card: #122a21;
+  --bg-card-light: #173529;
+  --gold: #d4af37;
+  --gold-light: #f6e27a;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+  --text-primary: #eaf5f0;
+  --text-secondary: #a9cfc2;
+  --text-muted: #7aa99b;
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-gold: rgba(212,175,55,0.3);
 }
 
-body{
-  min-height:100vh;
-  background:linear-gradient(160deg,#0f1f1a,#132b24,#0c1815);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:#ffffff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.wrapper{
-  width:100%;
-  max-width:430px;
-  background:linear-gradient(160deg,#162e27,#0e211c);
-  border-radius:28px;
-  padding:30px 24px 35px;
-  box-shadow:0 25px 70px rgba(0,0,0,0.6);
-  text-align:center;
-  border:1px solid rgba(255,255,255,0.05);
+body {
+  min-height: 100vh;
+  background: var(--bg-deep);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* LOGO */
-.logo{
-  width:115px;
-  height:115px;
-  margin:0 auto;
-  border-radius:50%;
-  padding:6px;
-  background:linear-gradient(135deg,#d4af37,#f6e27a,#d4af37);
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.logo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-  background:#000;
+.bg-layer .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: orbFloat 12s ease-in-out infinite alternate;
 }
 
-/* TITLE */
-h1{
-  margin-top:20px;
-  font-size:28px;
-  font-weight:700;
-  background:linear-gradient(90deg,#f6e27a,#d4af37);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+.bg-layer .orb:nth-child(1) {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%);
+  top: -80px; left: -60px;
+  animation-duration: 14s;
 }
 
-.tagline{
-  font-size:14px;
-  color:#a9cfc2;
-  margin-top:6px;
+.bg-layer .orb:nth-child(2) {
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, rgba(246,226,122,0.15), transparent 70%);
+  bottom: -60px; right: -40px;
+  animation-duration: 10s;
+  animation-delay: -4s;
 }
 
-/* REDIRECT TIMER BOX */
-.timer-box{
-  margin-top:20px;
-  padding:14px;
-  background:rgba(212,175,55,0.1);
-  border:1px dashed rgba(246,226,122,0.4);
-  border-radius:14px;
-  font-size:14px;
-  color:#f6e27a;
+.bg-layer .orb:nth-child(3) {
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12), transparent 70%);
+  top: 50%; left: 60%;
+  animation-duration: 16s;
+  animation-delay: -8s;
 }
 
-.timer-count{
-  font-weight:700;
-  font-size:16px;
-  color:#ffffff;
+@keyframes orbFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(30px, -20px) scale(1.1); }
+  100% { transform: translate(-20px, 30px) scale(0.95); }
 }
 
-/* INFO BOX */
-.info-box{
-  margin-top:24px;
-  background:rgba(255,255,255,0.04);
-  border-radius:18px;
-  padding:20px;
-  text-align:left;
-  border:1px solid rgba(255,255,255,0.06);
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.info-box ul{
-  list-style:none;
+.wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 430px;
+  margin: 20px;
+  background: linear-gradient(170deg, var(--bg-card-light), var(--bg-card));
+  border-radius: 28px;
+  padding: 36px 24px 32px;
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.6),
+    0 0 0 1px var(--border-subtle),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  text-align: center;
+  animation: cardEntry 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.info-box li{
-  display:flex;
-  gap:10px;
-  font-size:15px;
-  padding:9px 0;
-  color:#d7efe7;
+@keyframes cardEntry {
+  from { opacity: 0; transform: translateY(40px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.info-box li::before{
-  content:"✔";
-  color:#f6e27a;
-  font-weight:700;
+.logo-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 4px;
 }
 
-/* CTA */
-.cta{
-  margin-top:24px;
+.logo-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--gold);
+  border-right-color: var(--gold-light);
+  animation: ringRotate 3s linear infinite;
 }
 
-.cta a{
-  display:block;
-  padding:17px;
-  font-size:18px;
-  font-weight:600;
-  border-radius:50px;
-  background:linear-gradient(135deg,#d4af37,#f6e27a);
-  color:#0c1815;
-  text-decoration:none;
-  box-shadow:0 18px 40px rgba(212,175,55,0.35);
-  transition:0.3s ease;
+.logo-ring-inner {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border-bottom-color: rgba(212,175,55,0.4);
+  border-left-color: rgba(246,226,122,0.2);
+  animation: ringRotate 5s linear infinite reverse;
 }
 
-.cta a:hover{
-  transform:translateY(-3px);
-  box-shadow:0 22px 50px rgba(212,175,55,0.6);
+@keyframes ringRotate {
+  to { transform: rotate(360deg); }
 }
 
-/* TRUST */
-.trust{
-  margin-top:18px;
-  font-size:13px;
-  color:#9ec9bb;
+.logo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+  position: relative;
+  z-index: 2;
 }
 
-/* DISCLAIMER */
-.disclaimer{
-  margin-top:18px;
-  font-size:11px;
-  color:#7aa99b;
-  line-height:1.6;
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #0a1510;
+  display: block;
 }
 
-/* NETAD BUTTON */
-.netad-btn{
-  margin-top:24px;
+h1 {
+  margin-top: 18px;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.3px;
 }
 
-.netad-btn a{
-  display:inline-block;
-  padding:10px 22px;
-  border-radius:40px;
-  background:rgba(255,255,255,0.05);
-  color:#d4af37;
-  font-size:13px;
-  font-weight:600;
-  text-decoration:none;
-  border:1px solid rgba(212,175,55,0.3);
-  transition:0.3s ease;
+.tagline {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 5px;
+  font-weight: 400;
 }
 
-.netad-btn a:hover{
-  background:rgba(212,175,55,0.1);
-  box-shadow:0 10px 25px rgba(212,175,55,0.3);
+.timer-box {
+  margin-top: 22px;
+  padding: 16px 18px;
+  background: rgba(212,175,55,0.07);
+  border: 1px dashed rgba(246,226,122,0.3);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(246,226,122,0.03), transparent);
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50%      { transform: translateX(100%); }
+}
+
+.timer-text {
+  font-size: 13px;
+  color: var(--gold-light);
+  position: relative;
+  z-index: 1;
+}
+
+.timer-count {
+  font-weight: 800;
+  font-size: 18px;
+  color: #ffffff;
+  display: inline-block;
+  min-width: 22px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.timer-count.tick {
+  transform: scale(1.3);
+}
+
+.timer-progress {
+  margin-top: 10px;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.timer-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 4px;
+  transition: width 1s linear;
+  box-shadow: 0 0 8px var(--gold-glow);
+}
+
+.cta {
+  margin-top: 22px;
+}
+
+.cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 17px 24px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--bg-deep);
+  text-decoration: none;
+  box-shadow:
+    0 8px 30px var(--gold-glow),
+    0 2px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.cta a:hover::after {
+  transform: translateX(100%);
+}
+
+.cta a:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 45px rgba(212,175,55,0.5),
+    0 4px 12px rgba(0,0,0,0.3);
+}
+
+.cta a:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.cta-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.info-box {
+  margin-top: 22px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  padding: 18px 20px;
+  text-align: left;
+  border: 1px solid var(--border-subtle);
+  animation: fadeSlideUp 0.6s 0.3s both;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.info-box ul {
+  list-style: none;
+}
+
+.info-box li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  padding: 8px 0;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.info-box li + li {
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.check-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(212,175,55,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.check-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.cta-secondary {
+  margin-top: 18px;
+}
+
+.cta-secondary a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  background: transparent;
+  color: var(--gold-light);
+  text-decoration: none;
+  border: 2px solid var(--border-gold);
+  transition: all 0.3s ease;
+}
+
+.cta-secondary a:hover {
+  background: rgba(212,175,55,0.08);
+  border-color: var(--gold);
+  box-shadow: 0 8px 30px rgba(212,175,55,0.15);
+  transform: translateY(-2px);
+}
+
+.trust {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.trust-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.6;
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+.trust-dot:nth-child(2) { animation-delay: 0.2s; }
+.trust-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50%      { opacity: 1; transform: scale(1.1); }
+}
+
+.disclaimer {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+.netad-btn {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.netad-btn a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 40px;
+  background: rgba(255,255,255,0.03);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(212,175,55,0.15);
+  transition: all 0.3s ease;
+  letter-spacing: 0.2px;
+}
+
+.netad-btn a:hover {
+  background: rgba(212,175,55,0.08);
+  border-color: var(--border-gold);
+}
+
+@media (max-width: 460px) {
+  .wrapper {
+    margin: 12px;
+    padding: 28px 18px 26px;
+    border-radius: 22px;
+  }
+  h1 { font-size: 23px; }
+  .cta a { font-size: 16px; padding: 15px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 </style>
 
-<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -193,48 +480,92 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=27588627857423187&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
-  
+
 </head>
 
 <body>
 
+<div class="bg-layer" aria-hidden="true">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
+<canvas id="particles" aria-hidden="true"></canvas>
+
 <div class="wrapper">
 
-  <div class="logo">
-    <img src="https://original.netadexpert.live/wp-content/uploads/2026/07/PHOTO-2026-07-21-10-03-43.jpg" alt="Learning">
+  <div class="logo-wrap">
+    <div class="logo-ring"></div>
+    <div class="logo-ring-inner"></div>
+    <div class="logo">
+      <img src="https://original.netadexpert.live/wp-content/uploads/2026/07/PHOTO-2026-07-21-10-03-43.jpg" alt="Pankaj Bhardwaj">
+    </div>
   </div>
 
   <h1>Pankaj Bhardwaj</h1>
-  <div class="tagline">Learn More • Earn More</div>
+  <div class="tagline">Learn More &bull; Earn More</div>
 
-  <!-- COUNTDOWN TIMER DISPLAY -->
   <div class="timer-box">
-    Auto redirecting in <span id="countdown" class="timer-count">15</span> seconds...
+    <div class="timer-text">
+      Auto redirecting in <span id="countdown" class="timer-count">15</span> seconds
+    </div>
+    <div class="timer-progress">
+      <div class="timer-progress-bar" id="progressBar" style="width: 100%"></div>
+    </div>
   </div>
 
   <div class="cta">
-    <a href="https://t.me/+nr6GVuns7ScxYjk1" target="_blank" onclick="trackSubscribeEvent()">
+    <a href="https://t.me/+nr6GVuns7ScxYjk1" target="_blank" rel="noopener" onclick="trackSubscribeEvent()">
+      <span class="cta-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855.075 1.643.428 1.962l4.048 3.704c.218.2.479.326.756.361l3.736.498c-.09.098-.186.2-.287.305l-3.094 3.094a.86.86 0 0 0-.186.929c.137.32.454.527.798.527h.234l4.47-.59a1.15 1.15 0 0 0 .657-.332l2.383-2.383c.107.332.23.65.37.953l.585 1.37a.87.87 0 0 0 1.168.426l1.967-.932a.87.87 0 0 0 .418-1.168l-.585-1.37a10.4 10.4 0 0 1-.355-1.08l2.746-2.746a.87.87 0 0 0 .248-.733l-.525-3.626a1.15 1.15 0 0 0-.332-.657l-2.383-2.383a10.4 10.4 0 0 1 1.08.355l1.37.585a.87.87 0 0 0 1.168-.418l.932-1.967a.87.87 0 0 0-.426-1.168l-1.37-.585a10.4 10.4 0 0 1-.953-.37l2.383-2.383a1.15 1.15 0 0 0 .332-.657l.498-3.736a1.15 1.15 0 0 0-.361-.756z"/></svg>
+      </span>
       Join Free Telegram Channel
     </a>
   </div>
-  
+
   <div class="info-box">
     <ul>
-      <li>Financial Education & Wealth Mindset</li>
-      <li>Market Basics & Learning Content</li>
-      <li>Beginner Friendly Community</li>
-      <li>No Tips • No Guarantees • Only Learning</li>
+      <li>
+        <span class="check-icon">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+        </span>
+        Share Market Fundamentals — Zero to Hero
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+        </span>
+        Chart Reading & Technical Analysis Simplified
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+        </span>
+        Money Management & Risk Control Techniques
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+        </span>
+        100% Free Education — No Paid Services
+      </li>
     </ul>
   </div>
 
-  <div class="cta">
-    <a href="https://t.me/+nr6GVuns7ScxYjk1" target="_blank" onclick="trackSubscribeEvent()">
-      Join Free Telegram Channel
+  <div class="cta-secondary">
+    <a href="https://t.me/+nr6GVuns7ScxYjk1" target="_blank" rel="noopener" onclick="trackSubscribeEvent()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Can't Wait? Join Now
     </a>
   </div>
 
   <div class="trust">
+    <span class="trust-dots">
+      <span class="trust-dot"></span>
+      <span class="trust-dot"></span>
+      <span class="trust-dot"></span>
+    </span>
     Trusted by learners across India
   </div>
 
@@ -245,38 +576,116 @@ src="https://www.facebook.com/tr?id=27588627857423187&ev=PageView&noscript=1"
   </div>
 
   <div class="netad-btn">
-    <a href="https://t.me/+UyYzth29HpY4MDVl" target="_blank">
+    <a href="https://t.me/+UyYzth29HpY4MDVl" target="_blank" rel="noopener">
       Ad Managed by Digital Ads Expert
     </a>
   </div>
 
 </div>
 
-<!-- AUTO REDIRECT & PIXEL TRACKING SCRIPT -->
 <script>
-  function trackSubscribeEvent() {
-    if (typeof fbq === 'function') {
-      fbq('track', 'Subscribe');
+function trackSubscribeEvent() {
+  if (typeof fbq === 'function') {
+    fbq('track', 'Subscribe');
+  }
+}
+
+(function() {
+  var TOTAL = 15;
+  var seconds = TOTAL;
+  var redirectUrl = "https://t.me/+nr6GVuns7ScxYjk1";
+  var countdownEl = document.getElementById("countdown");
+  var progressBar = document.getElementById("progressBar");
+
+  var timer = setInterval(function() {
+    seconds--;
+    if (countdownEl) {
+      countdownEl.textContent = seconds;
+      countdownEl.classList.add("tick");
+      setTimeout(function() {
+        countdownEl.classList.remove("tick");
+      }, 300);
     }
+    if (progressBar) {
+      var pct = Math.max(0, (seconds / TOTAL) * 100);
+      progressBar.style.width = pct + "%";
+    }
+    if (seconds <= 0) {
+      clearInterval(timer);
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+      setTimeout(function() {
+        window.location.href = redirectUrl;
+      }, 200);
+    }
+  }, 1000);
+})();
+
+(function() {
+  var canvas = document.getElementById("particles");
+  var ctx = canvas.getContext("2d");
+  var particles = [];
+  var PARTICLE_COUNT = 35;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducedMotion) return;
+
+  function Particle() {
+    this.reset();
   }
 
-  (function() {
-    var seconds = 15;
-    var redirectUrl = "https://t.me/+nr6GVuns7ScxYjk1";
-    var countdownElement = document.getElementById("countdown");
+  Particle.prototype.reset = function() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.3;
+    this.speedY = (Math.random() - 0.5) * 0.3;
+    this.opacity = Math.random() * 0.3 + 0.05;
+    this.pulse = Math.random() * Math.PI * 2;
+    this.pulseSpeed = Math.random() * 0.02 + 0.005;
+  };
 
-    var timer = setInterval(function() {
-      seconds--;
-      if (countdownElement) {
-        countdownElement.textContent = seconds;
-      }
-      if (seconds <= 0) {
-        clearInterval(timer);
-        // Direct redirect without tracking event
-        window.location.href = redirectUrl;
-      }
-    }, 1000);
-  })();
+  Particle.prototype.update = function() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    this.pulse += this.pulseSpeed;
+    if (this.x < -10 || this.x > canvas.width + 10 ||
+        this.y < -10 || this.y > canvas.height + 10) {
+      this.reset();
+    }
+  };
+
+  Particle.prototype.draw = function() {
+    var alpha = this.opacity * (0.6 + 0.4 * Math.sin(this.pulse));
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, Math.max(0.1, this.size), 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(212, 175, 55, " + alpha + ")";
+    ctx.fill();
+  };
+
+  for (var i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
 </script>
 
 </body>
